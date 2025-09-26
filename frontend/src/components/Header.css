@@ -24,3 +24,10 @@ header .login button {
   font-size: 16px;
   cursor: pointer;
 }
+
+
+/* 🚨 로고 이미지의 크기를 지정합니다. */
+.logo-img {
+    height: 300px; /* 원하는 높이로 설정 */
+    width: 200px; /* 비율 유지를 위해 너비는 자동으로 설정 */
+}
