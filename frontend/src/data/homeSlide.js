@@ -1,4 +1,4 @@
-import slide1 from '../assets/logo.png' 
+import slide1 from '../assets/lu.png' 
 import slide2 from '../assets/hanmoonchul.png' 
 import slide3 from '../assets/slide3.webp' 
 

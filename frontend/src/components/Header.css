@@ -9,6 +9,23 @@ header {
   background-color: #f5f5f5;    /* 배경색 (원하면 변경 가능) */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 살짝 그림자 */
 }
+.logo {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 10px; /* 로고와 텍스트 사이에 간격 10px 추가 */
+    /* 필요하다면 추가적인 스타일을 여기에 적용 */
+}
+
+.logo-img {
+    height: 40px; 
+    width: auto; 
+}
+
+/* 텍스트 스타일 */
+.logo p {
+    font-weight: bold; /* 필요하다면 굵게 */
+    margin: 0; /* <p> 태그의 기본 margin 제거 */
+}
 .login button{
     border: none;
     background-color: #f5f5f5; 
@@ -28,6 +45,7 @@ header .login button {
 
 /* 🚨 로고 이미지의 크기를 지정합니다. */
 .logo-img {
-    height: 300px; /* 원하는 높이로 설정 */
-    width: 200px; /* 비율 유지를 위해 너비는 자동으로 설정 */
+    height: 50px; /* 원하는 높이로 설정 */
+    width: 50px; /* 비율 유지를 위해 너비는 자동으로 설정 */
+    
 }
