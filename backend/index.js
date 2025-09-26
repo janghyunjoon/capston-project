@@ -1,42 +1,40 @@
-const dotenv = require("dotenv");
-dotenv.config();
 const express = require("express");
-const app = express();
-const mongoose = require("mongoose");
-const PORT = process.env.PORT || 3000;
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+const userRouter = require("./routes/User");
+const infoRouter = require("./routes/Info");
+
+const app = express();
+const PORT = process.env.PORT || 5000;
 
 // 미들웨어
-app.use(cookieParser());
+app.use(cors({
+  origin: process.env.FRONT_ORIGIN || "http://localhost:3000",
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-    origin: process.env.FRONT_ORIGIN,
-    credentials: true
-}));
+app.use(cookieParser());
 
-// DB 연결
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log("연결 성공"))
-    .catch((error) => console.log("연결 실패", error));
-
-// 라우터 불러오기
-const userRoutes = require("./routes/user");
-const infoRoutes = require("./routes/Info"); // 여기 추가
-
-// 라우터 등록
-app.use("/user", userRoutes);
-app.use("/info", infoRoutes); // 여기 추가
+// 라우트
+app.use("/api/user", userRouter);
+app.use("/api/info", infoRouter);
 
 // 루트 테스트
 app.get("/", (req, res) => {
-    res.json({ message: "Hello Express" });
+  res.json({ message: "Hello Express" });
 });
 
-// 서버 시작
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
-
+// DB 연결
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB 연결 성공");
+    // DB 연결 성공 시 서버 실행
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch(err => console.error("MongoDB 연결 실패:", err));
