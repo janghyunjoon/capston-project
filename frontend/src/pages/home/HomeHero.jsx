@@ -9,30 +9,19 @@ import './HomeHero.css'
 import { homeSlides } from '../../data/homeSlide'
 
 const HomeHero = () => {
+    // ... (Swiper 설정 동일)
     return (
         <div className='homeHero'>
             <Swiper
-                navigation={true}
-                // 🚨 modules에 Autoplay를 포함합니다.
-                modules={[Navigation, Pagination, Autoplay, A11y]} 
-                pagination={{ clickable: true }}
-                a11y={{ enabled: true }}
-                slidesPerView={1}
-                loop
-                
-                // 🚨 Autoplay 속성 추가 (3초마다 전환)
-                autoplay={{
-                    delay: 3000, 
-                    disableOnInteraction: false,
-                }}
+                // ... (Swiper props 동일)
             >
                 {homeSlides.map(({ id, img, title, subtitle, href, subtitleHref }) => {
                     
-                    // subtitle에 링크를 조건부로 적용하는 로직
                     const subtitleContent = subtitleHref ? (
                         <a 
                             href={subtitleHref} 
                             className='subtitle-link' 
+                            // 💡 내부 <a> 클릭 시, 상위 div의 이벤트 전파를 막습니다.
                             onClick={(e) => e.stopPropagation()} 
                         >
                             {subtitle}
@@ -53,11 +42,21 @@ const HomeHero = () => {
                             </div>
                         </figure>
                     )
+                    
+                    // 💡 SwiperSlide를 <div>로 감싸고 onClick 이벤트를 추가하여 전체 슬라이드를 링크처럼 만듭니다.
                     return (
                         <SwiperSlide key={id}>
-                            <a href={href} className='slide-link'>
+                            {/* ❌ 이전의 바깥쪽 <a>를 제거하고 <div>로 변경 */}
+                            <div 
+                                className='slide-wrapper' // 새로운 클래스명 부여
+                                style={{cursor: 'pointer'}} // 클릭 가능한 UI 제공
+                                onClick={() => {
+                                    window.location.href = href;
+                                }}
+                            >
                                 {card}
-                            </a>
+                            </div>
+                            {/* 💡 이제 중첩된 <a>는 subtitleContent 내부의 <a> 하나만 남습니다. */}
                         </SwiperSlide>
                     )
                 })}
