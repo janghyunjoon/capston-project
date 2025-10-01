@@ -1,7 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-// 🚨 Autoplay 모듈을 사용합니다.
-import { Navigation, Pagination, Autoplay, A11y } from 'swiper/modules'; 
+import { Navigation, Pagination, Autoplay, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -13,16 +12,27 @@ const HomeHero = () => {
     return (
         <div className='homeHero'>
             <Swiper
-                // ... (Swiper props 동일)
+                navigation={true}
+                modules={[Navigation, Pagination, Autoplay, A11y]}
+                pagination={{ clickable: true }}
+                a11y={{ enabled: true }}
+                slidesPerView={1}
+                loop
+                autoplay={{
+                    delay: 3000,        // 3초마다 자동으로 슬라이드 이동
+                    disableOnInteraction: false, // 사용자가 슬라이드 건드려도 자동 재생 유지
+                }}
+                speed={1000}     
             >
+
                 {homeSlides.map(({ id, img, title, subtitle, href, subtitleHref }) => {
-                    
+
                     const subtitleContent = subtitleHref ? (
-                        <a 
-                            href={subtitleHref} 
-                            className='subtitle-link' 
+                        <a
+                            href={subtitleHref}
+                            className='subtitle-link'
                             // 💡 내부 <a> 클릭 시, 상위 div의 이벤트 전파를 막습니다.
-                            onClick={(e) => e.stopPropagation()} 
+                            onClick={(e) => e.stopPropagation()}
                         >
                             {subtitle}
                         </a>
@@ -34,7 +44,7 @@ const HomeHero = () => {
                         <figure
                             className='slide-card'
                             aria-label={title}
-                            style={{ backgroundImage: `url(${img})` }} 
+                            style={{ backgroundImage: `url(${img})` }}
                         >
                             <div className="t-wrap">
                                 <h2>{title}</h2>
@@ -42,21 +52,20 @@ const HomeHero = () => {
                             </div>
                         </figure>
                     )
+
                     
-                    // 💡 SwiperSlide를 <div>로 감싸고 onClick 이벤트를 추가하여 전체 슬라이드를 링크처럼 만듭니다.
                     return (
                         <SwiperSlide key={id}>
-                            {/* ❌ 이전의 바깥쪽 <a>를 제거하고 <div>로 변경 */}
-                            <div 
+                            
+                            <div
                                 className='slide-wrapper' // 새로운 클래스명 부여
-                                style={{cursor: 'pointer'}} // 클릭 가능한 UI 제공
+                                style={{ cursor: 'pointer' }} // 클릭 가능한 UI 제공
                                 onClick={() => {
                                     window.location.href = href;
                                 }}
                             >
                                 {card}
                             </div>
-                            {/* 💡 이제 중첩된 <a>는 subtitleContent 내부의 <a> 하나만 남습니다. */}
                         </SwiperSlide>
                     )
                 })}
