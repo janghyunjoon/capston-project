@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import ChatbotButton from "./components/ChatbotButton";
 import Home from './pages/Home';
 import Description from './components/Description'
+import './App.css'
 
 function App() {
   return (
@@ -11,9 +12,11 @@ function App() {
       <Header />
       
       <ChatbotButton/>
+      <div className="main">
       <Routes>
         <Route path='/' element={<Home/>}/>
       </Routes>
+      </div>
       <Description/>
     </Router>
   );

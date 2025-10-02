@@ -79,9 +79,10 @@
 }
 
 .slide-card {
-    width: 100%;
+    width: 1000px;
     height: 400px; /* 원하는 높이 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transform: translate(17%, 10%);
 }

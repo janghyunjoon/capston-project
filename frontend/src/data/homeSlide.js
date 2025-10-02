@@ -9,6 +9,7 @@ export const homeSlides=[
         title:"과실비율정보포털", 
         subtitle:"포털 바로가기", 
         subtitleHref:"https://accident.knia.or.kr/", 
+        href:"#"
     }, 
     { 
         id:"한문철 유튜브", 
@@ -16,6 +17,7 @@ export const homeSlides=[
         title:"한문철 유튜브", 
         subtitle:"한문철 유튜브 바로가기", 
         subtitleHref: "https://www.youtube.com/@HANMOONCHULTV", 
+        href:"#"
     }, 
     { 
         id:"hero3", 
@@ -23,5 +25,6 @@ export const homeSlides=[
         title:"세번째 슬라이드", 
         subtitle:"간단한 설명 텍스트", 
         subtitleHref: null, 
+        href:"#"
     }, 
 ]
