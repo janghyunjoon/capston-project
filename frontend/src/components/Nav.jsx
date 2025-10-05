@@ -1,20 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useSmoothScroll from '../hook/useSmoothScroll'
 import './Nav.css'
-const Nav = () => {
-    const navLink = ['Hero', 'Contact', 'Work', 'Aboutme']
 
+const Nav = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const navLink = ['Hero', 'Contact', 'Work', 'Aboutme']
     const scrollTo = useSmoothScroll()
+    
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const handleScrollAndClose = (nav) => {
+        scrollTo(nav);
+        setIsOpen(false);
+    }
+
     return (
-        
-        <nav>
-            <ul>
+        <nav className={isOpen ? 'nav-open' : ''}> 
+            
+            <button className="nav-toggle" onClick={toggleMenu}>
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </button>
+
+            <ul className="nav-list"> 
                 {navLink.map((nav, i) => (
-                    <li key={i}>
+                    <li key={i} onClick={() => setIsOpen(false)}>
                         <a
                             onClick={(e) => {
                                 e.preventDefault()
-                                scrollTo(nav)
+                                handleScrollAndClose(nav)
                             }}
                             href={`#${nav}`}>
                             {nav}
