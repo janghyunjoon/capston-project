@@ -20,11 +20,11 @@ export const homeSlides=[
         href:"#"
     }, 
     { 
-        id:"hero3", 
+        id:"로드플러스", 
         img:slide3, 
-        title:"세번째 슬라이드", 
-        subtitle:"간단한 설명 텍스트", 
-        subtitleHref: null, 
+        title:"로드 플러스", 
+        subtitle:"로드 플러스 바로가기", 
+        subtitleHref: "https://www.roadplus.co.kr/main/main.do", 
         href:"#"
     }, 
 ]

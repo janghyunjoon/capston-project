@@ -1,11 +1,14 @@
-.chatbot button{
-    position: fixed;               /* 화면 기준 고정 */
+.chatbot button {
+    position: fixed;               
     border-radius: 15px;
     height: 50px;
     width: 30%;
-    font-size: 25px;
-    background-color: orange;
+    font-size: 20px;
+    background-color: rgb(44, 32, 26);
+    border: 3px solid orange;
+    color: white;
     left: 50%;
     transform: translateX(-50%);
     bottom: 15%;
+    z-index: 9999; /* ✅ 모든 요소 위로 올리기 */
 }

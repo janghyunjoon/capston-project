@@ -13,11 +13,12 @@ function App() {
       
       <ChatbotButton/>
       <div className="main">
+        <Description/>
       <Routes>
         <Route path='/' element={<Home/>}/>
       </Routes>
       </div>
-      <Description/>
+      
     </Router>
   );
 }
