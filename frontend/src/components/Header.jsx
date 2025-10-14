@@ -9,7 +9,6 @@ function Header() {
     <header>
       <div className="logo">
         <img src={LogoSvg} alt="자동차AI 로고" className="logo-img" />
-        <p>과실비율 AI</p>
       </div>
       <Nav />
       <div className="login">

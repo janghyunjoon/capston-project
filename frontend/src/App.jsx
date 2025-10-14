@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import ChatbotButton from "./components/ChatbotButton";
 import Home from './pages/Home';
 import Description from './components/Description'
+import TrafficEventTable from "./components/TrafficEventTable";
 import './App.css'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
       </Routes>
+      <TrafficEventTable /> 
       </div>
       
     </Router>
