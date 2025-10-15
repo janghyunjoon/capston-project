@@ -1,166 +1,181 @@
-/* Nav.css */
-
-/* 기본 Nav 컨테이너 */
-nav {
-    position: relative;
-    z-index: 2001;
+/* 전체 nav 컨테이너 */
+.nav {
+  position: relative;
+  z-index: 2001;
+  padding: 10px 20px;
 }
 
-/* 햄버거 버튼 스타일 */
+/* 아이콘 메뉴 버튼 */
 .nav-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    z-index: 2002;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2002;
 }
 
-/* 햄버거 바(Bar) 스타일 - 흰색 */
-.nav-toggle .bar {
-    width: 100%;
-    height: 3px;
-    background: #ffffff;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-/* 닫기(X) 아이콘 애니메이션 */
-.nav-open .nav-toggle .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.nav-open .nav-toggle .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-open .nav-toggle .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* 전체 화면 메뉴 컨테이너 */
+/* 메뉴 기본 숨김 */
 .full-screen-menu {
-    display: none;
+  display: none;
 }
 
-.nav-open .full-screen-menu {
-    /* 메뉴 열림 시: 화면 전체를 덮음 */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* 메뉴 열림 시 */
+.nav-open.full-screen-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 90%;
-    height: 40%;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 16%;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 30px 50px 20px 25px;
+  z-index: 2001;
 
-    background-color: #000000;
-    padding: 90px 30px 50px 30px;
-    margin: 0;
-    z-index: 2001;
-    overflow-y: auto;
-    /* 메뉴 항목이 많아지면 스크롤 가능 */
-
-    animation: fadeIn 0.3s ease-out;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* 메뉴 리스트 (.nav-list) */
+/* 메뉴 리스트 */
 .nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-grow: 1;
-    width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
-/* 메뉴 항목 스타일 */
 .nav-list li {
-    padding: 10px 0;
-    margin: 0;
-    width: 100%;
+  padding: 18px 0;
 }
 
 .nav-list a {
-    display: block;
-    text-decoration: none;
-    color: #ffffff;
-    padding: 15px 0;
-    transition: color 0.2s;
-    font-size: 24px;
-    font-weight: 500;
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
 .nav-list a:hover {
-    color: #4CAF50;
-    background-color: transparent;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 구분선 */
+.menu-divider {
+  width: 88%;
+  height: 1px;
+  background-color: white;
+  margin-top: 10px;  /* 위쪽 공간 추가 */
 }
 
 
-/* 로그인/회원가입 버튼 영역 스타일 */
-.auth-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    /* 버튼 영역의 최대 너비를 지정 */
-    max-width: 300px;
-    width: 100%;
-
-    margin-left: 10px;
-    /* ************************************** */
-
-    padding-top: 30px;
-    flex-shrink: 0;
+/* 로그인 / 회원가입 버튼 독립 섹션 */
+.full-screen-auth {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 150px; /* 메뉴 바로 아래 위치 기준 */
+  left: 52%;
+  transform: translateX(-50%);
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 30px 50px 600px 25px;
+  z-index: 2001;
 }
 
-.auth-buttons button {
-    width: 100%;
-    padding: 15px 20px;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-    line-height: 1;
+.nav-open.full-screen-auth {
+  display: flex;
+  margin-top: calc(30px + 40px + 25px); /* 메뉴 padding + menu-divider 높이 + 간격 */
 }
 
-/* Sign Up 버튼 (흰색 배경, 검은색 텍스트) */
+/* Sign Up 버튼 - 심플 버전 */
 .btn-signup {
-    background-color: #ffffff;
-    color: #000000;
-    border: 2px solid #ffffff;
+  background-color: white;
+  color: black;
+  border: none;              /* 테두리 제거 */
+  border-radius: 6px;        /* 살짝 둥근 모서리 */
+  padding: 10px 0;           /* 위아래 패딩만 간단히 */
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-signup:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0; /* 은은한 hover */
+  transform: translateY(-2px); /* 살짝 떠있는 느낌 */
 }
 
-/* Sign In 버튼 (투명 배경, 흰색 텍스트, 흰색 테두리) */
+/* Sign Up 버튼 */
+.btn-signup {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  margin-bottom: 20px; /* 간격 늘림 */
+}
+
+.btn-signup:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* Sign In 버튼 */
 .btn-signin {
-    background-color: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  /* Sign In 버튼은 margin 필요 없음 */
 }
 
 .btn-signin:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .nav-list a {
+    font-size: 18px;
+  }
+
+  .btn-signup,
+  .btn-signin {
+    font-size: 16px;
+    padding: 10px 0;
+  }
 }

@@ -1,14 +1,34 @@
 .chatbot button {
-    position: fixed;               
+    position: fixed;
     border-radius: 15px;
     height: 50px;
     width: 30%;
     font-size: 20px;
-    background-color: rgb(44, 32, 26);
-    border: 3px solid orange;
+    background-color: rgb(50, 90, 180);
+    border: 2px solid black;
     color: white;
     left: 50%;
     transform: translateX(-50%);
     bottom: 15%;
     z-index: 9999; /* ✅ 모든 요소 위로 올리기 */
+}
+
+/* ✅ 반응형 처리: 768px 이하 (태블릿 & 모바일) */
+@media (max-width: 768px) {
+    .chatbot button {
+        width: 60%;        /* 화면의 60%로 확장 */
+        height: 45px;      /* 살짝 낮게 */
+        font-size: 16px;   /* 텍스트도 줄이기 */
+        bottom: 12%;       /* 살짝 위로 올리기 */
+    }
+}
+
+/* ✅ 아주 작은 화면 (480px 이하 스마트폰) */
+@media (max-width: 480px) {
+    .chatbot button {
+        width: 80%;        /* 화면 대부분 차지 */
+        height: 40px;      /* 더 얇게 */
+        font-size: 14px;   /* 글자 작게 */
+        bottom: 10%;       /* 살짝 더 위로 */
+    }
 }

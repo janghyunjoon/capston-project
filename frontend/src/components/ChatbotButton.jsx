@@ -4,7 +4,7 @@ import "./ChatbotButton.css";
 function ChatbotButton() {
   return (
     <div className="chatbot">
-        <button>챗봇 시작하기</button>
+        <button>A.I 상담 시작</button>
       </div>
   )
 }
