@@ -8,7 +8,7 @@ function Header() {
   return (
     <header>
       <div className="logo">
-        <img src={LogoSvg} alt="자동차AI 로고" className="logo-img" />
+        <img src={LogoSvg} alt="Verdent 로고" className="logo-img" />
       </div>
       <Nav />
     </header>
