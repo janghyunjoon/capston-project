@@ -27,13 +27,6 @@ nav {
     height: 40px; 
     width: auto; 
 }
-header .login button {
-    border: none;
-    background-color: #f5f5f5; 
-    padding: 6px 15px;
-    font-size: 16px;
-    cursor: pointer;
-}
 
 .logo-img {
     height: 50px; 

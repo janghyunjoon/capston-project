@@ -5,7 +5,7 @@ import './Nav.css'
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const navLink = ['새소식', '고객센터', 'Work', 'Aboutme']
+    const navLink = ['새소식', '고객센터', '로그인', '회원가입']
     const scrollTo = useSmoothScroll()
     
     const toggleMenu = () => {

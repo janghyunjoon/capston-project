@@ -11,9 +11,6 @@ function Header() {
         <img src={LogoSvg} alt="자동차AI 로고" className="logo-img" />
       </div>
       <Nav />
-      <div className="login">
-        <button>로그인</button>
-      </div>
     </header>
   );
 }
