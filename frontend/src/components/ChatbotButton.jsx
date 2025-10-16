@@ -9,7 +9,11 @@ function ChatbotButton() {
         target="_blank" 
         rel="noopener noreferrer" 
       >
+<<<<<<< Updated upstream
         챗봇 시작하기
+=======
+        A.I 상담시작
+>>>>>>> Stashed changes
       </a>
     </div>
   )
