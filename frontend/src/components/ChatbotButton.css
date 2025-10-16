@@ -1,9 +1,16 @@
-.chatbot button {
+.chatbot a { /* ❗❗ button 대신 a로 변경 ❗❗ */
     position: fixed;               
     border-radius: 15px;
     height: 50px;
     width: 30%;
     font-size: 20px;
+    
+    /* <a> 태그를 <button>처럼 보이게 하기 위한 추가 스타일 */
+    display: flex; /* 텍스트를 중앙 정렬하기 위해 추가 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    text-decoration: none; /* ❗❗ 기본 밑줄 제거 ❗❗ */
+    
     background-color: rgb(44, 32, 26);
     border: 3px solid orange;
     color: white;

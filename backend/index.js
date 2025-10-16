@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const axios = require("axios");
 require("dotenv").config();
 
-const userRouter = require("./routes/User");
+const userRouter = require("./routes/user");
 const infoRouter = require("./routes/Info");
 
 const app = express();
