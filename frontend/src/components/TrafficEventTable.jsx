@@ -6,15 +6,29 @@ const TrafficEventTable = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // ✅ 환경 변수 기반으로 백엔드 주소 설정
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const fetchTrafficData = async () => {
     setLoading(true);
+    setError(null);
+
     try {
-      const res = await fetch("http://localhost:5000/api/traffic");
-      const data = await res.json();
-      setEvents(data.events || []);
+      const response = await fetch(`${API_BASE_URL}/api/traffic`, {
+        method: "GET",
+      });
+
+      if (!response.ok) {
+        throw new Error(`서버 응답 오류: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const eventList = data?.body?.items?.item || data?.events || [];
+      setEvents(eventList);
     } catch (err) {
-      console.error(err);
-      setError("데이터를 불러올 수 없습니다.");
+      console.error("🚨 교통 데이터 요청 실패:", err.message);
+      setError("⚠️ 서버 연결 실패 또는 데이터를 불러올 수 없습니다.");
+      setEvents([]);
     } finally {
       setLoading(false);
     }
@@ -22,7 +36,7 @@ const TrafficEventTable = () => {
 
   useEffect(() => {
     fetchTrafficData();
-    const interval = setInterval(fetchTrafficData, 30000); // 30초마다 자동 새로고침
+    const interval = setInterval(fetchTrafficData, 30000);
     return () => clearInterval(interval);
   }, []);
 
@@ -39,7 +53,7 @@ const TrafficEventTable = () => {
             <th>도로명</th>
             <th>발생시각</th>
             <th>차단차로</th>
-            <th>좌표(X,Y)</th>
+            <th>좌표(X, Y)</th>
           </tr>
         </thead>
         <tbody>
@@ -50,7 +64,11 @@ const TrafficEventTable = () => {
                 <td>{event.roadName || "-"}</td>
                 <td>{event.startDate || "-"}</td>
                 <td>{event.lanesBlocked || "-"}</td>
-                <td>{event.coordX}, {event.coordY}</td>
+                <td>
+                  {event.coordX && event.coordY
+                    ? `${event.coordX}, ${event.coordY}`
+                    : "-"}
+                </td>
               </tr>
             ))
           ) : (

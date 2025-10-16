@@ -6,7 +6,7 @@ const axios = require("axios");
 require("dotenv").config();
 
 const userRouter = require("./routes/user");
-const infoRouter = require("./routes/Info");
+const infoRouter = require("./routes/info");
 
 const app = express();
 const PORT = process.env.PORT || 5000;

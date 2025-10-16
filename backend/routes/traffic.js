@@ -11,7 +11,7 @@ const API_KEY = process.env.TRAFFIC_API_KEY;
 router.get("/", async (req, res) => {
   try {
     // 예시: 국토교통부 실시간 교통정보 API (서울 도로 이벤트)
-    const url = `https://apis.data.go.kr/B552061/frequentzoneOld/getRestTrafficEvent?serviceKey=${API_KEY}&type=json&numOfRows=10&pageNo=1`;
+    const url = `https://apis.data.go.kr/B552061/frequentzoneOld/getRestTrafficEvent?serviceKey=$6cd0a52d8b334b40a98d1bf0d20f6950&type=json&numOfRows=10&pageNo=1`;
 
     const response = await fetch(url);
     const data = await response.json();
