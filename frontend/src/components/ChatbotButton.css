@@ -1,4 +1,4 @@
-.chatbot button {
+.chatbot a {
     position: fixed;
     border-radius: 15px;
     height: 50px;
@@ -11,11 +11,16 @@
     transform: translateX(-50%);
     bottom: 15%;
     z-index: 9999; /* ✅ 모든 요소 위로 올리기 */
+    display: flex; /* 텍스트를 중앙 정렬하기 위해 추가 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    text-decoration: none; /* ❗❗ 기본 밑줄 제거 ❗❗ */
+    
 }
 
 /* ✅ 반응형 처리: 768px 이하 (태블릿 & 모바일) */
 @media (max-width: 768px) {
-    .chatbot button {
+    .chatbot a {
         width: 60%;        /* 화면의 60%로 확장 */
         height: 45px;      /* 살짝 낮게 */
         font-size: 16px;   /* 텍스트도 줄이기 */
@@ -25,7 +30,7 @@
 
 /* ✅ 아주 작은 화면 (480px 이하 스마트폰) */
 @media (max-width: 480px) {
-    .chatbot button {
+    .chatbot a {
         width: 80%;        /* 화면 대부분 차지 */
         height: 40px;      /* 더 얇게 */
         font-size: 14px;   /* 글자 작게 */
