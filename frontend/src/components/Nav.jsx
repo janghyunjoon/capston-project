@@ -1,31 +1,31 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-=======
-import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
->>>>>>> main
 import './Nav.css';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-<<<<<<< HEAD
   const navigate = useNavigate();
 
+  // 네비게이션 링크 목록 정의
   const navLink = [
     { name: '새소식', path: '/news' },
     { name: '고객센터', path: '/support' }
   ];
 
+  // 햄버거 메뉴 열기/닫기 토글 함수
   const toggleMenu = () => {
     const nextIsOpen = !isOpen;
     setIsOpen(nextIsOpen);
+    // 메뉴가 열리면 뒷 배경 스크롤 방지
     document.body.style.overflow = nextIsOpen ? 'hidden' : 'auto';
   };
 
+  // 인증(로그인/회원가입) 버튼 클릭 핸들러
   const handleButtonClick = (action) => {
+    // 메뉴 닫고 스크롤 복원
     setIsOpen(false);
     document.body.style.overflow = 'auto';
+
     if (action === 'Sign Up') {
       navigate('/signup'); // 회원가입 페이지로 이동
     } else if (action === 'Sign In') {
@@ -33,13 +33,18 @@ const Nav = () => {
     }
   };
 
+  // 네비게이션 링크 클릭 핸들러
   const handleNavLinkClick = () => {
+    // 메뉴 닫고 스크롤 복원
     setIsOpen(false);
     document.body.style.overflow = 'auto';
   };
 
   return (
+    // 메뉴 상태에 따라 'nav-open' 클래스 적용
     <nav className={isOpen ? 'nav-open' : ''}>
+      
+      {/* 햄버거/닫기 토글 버튼 */}
       <button
         className="nav-toggle"
         onClick={toggleMenu}
@@ -50,7 +55,10 @@ const Nav = () => {
         <span className="bar"></span>
       </button>
 
+      {/* 전체 화면 메뉴 (Full-Screen Menu) */}
       <div className="full-screen-menu">
+        
+        {/* 네비게이션 링크 리스트 */}
         <ul className="nav-list">
           {navLink.map((nav, i) => (
             <li key={i} onClick={handleNavLinkClick}>
@@ -59,6 +67,7 @@ const Nav = () => {
           ))}
         </ul>
 
+        {/* 로그인/회원가입 버튼 영역 */}
         <div className="auth-buttons">
           <button className="btn-signup" onClick={() => handleButtonClick('Sign Up')}>
             Sign Up
@@ -72,61 +81,4 @@ const Nav = () => {
   );
 };
 
-=======
-
-  const navLinks = ['새소식', '고객센터'];
-
-  const toggleMenu = () => {
-    const nextState = !isOpen;
-    setIsOpen(nextState);
-    document.body.style.overflow = nextState ? 'hidden' : 'auto';
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
-    document.body.style.overflow = 'auto';
-  };
-
-  // ESC 키로 메뉴 닫기
-  useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === 'Escape') closeMenu();
-    };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, []);
-
-  return (
-    <nav className="nav">
-      {/* 아이콘 메뉴 버튼 */}
-      <button className="nav-toggle" onClick={toggleMenu}>
-        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-      </button>
-
-      {/* 전체화면 메뉴 리스트 */}
-      <div className={`full-screen-menu ${isOpen ? 'nav-open' : ''}`}>
-        <ul className="nav-list">
-          {navLinks.map((link, index) => (
-            <li key={index} onClick={closeMenu}>
-              <a href={`#${link}`}>{link}</a>
-            </li>
-          ))}
-        </ul>
-        <div className="menu-divider"></div>
-      </div>
-
-      {/* 로그인/회원가입 버튼 별도 섹션 */}
-      <div className={`full-screen-auth ${isOpen ? 'nav-open' : ''}`}>
-        <button className="btn-signup" onClick={closeMenu}>
-          Sign Up
-        </button>
-        <button className="btn-signin" onClick={closeMenu}>
-          Sign In
-        </button>
-      </div>
-    </nav>
-  );
-};
-
->>>>>>> main
 export default Nav;

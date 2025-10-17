@@ -1,49 +1,80 @@
-/* 전체 nav 컨테이너 */
-.nav {
-  position: relative;
-  z-index: 2001;
-  padding: 10px 20px;
+/* Nav.css */
+
+/* ===================================================
+   기본 Nav 컨테이너
+=================================================== */
+nav { /* React 컴포넌트의 <nav> 태그에 직접 적용 */
+    position: relative;
+    z-index: 2001;
+    /* padding: 10px 20px; -> 헤더 자체에 패딩이 있다면 추가 */
 }
 
-/* 아이콘 메뉴 버튼 */
+/* ===================================================
+   햄버거 메뉴 토글 버튼 스타일
+=================================================== */
 .nav-toggle {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2002;
-}
-
-/* 메뉴 기본 숨김 */
-.full-screen-menu {
-  display: none;
-}
-
-<<<<<<< HEAD
-.nav-open .full-screen-menu {
-    /* 메뉴 열림 시: 화면 전체를 덮음 */
+    /* 햄버거 바가 아닌, 버튼 자체의 스타일 */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* 가로축(좌우) 중앙 정렬 */
-    align-items: center; 
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 2002; /* 메뉴보다 위에 위치 */
+}
+
+/* 햄버거 바(Bar) 스타일 - 흰색 */
+.nav-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* 닫기(X) 아이콘 애니메이션 */
+.nav-open .nav-toggle .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.nav-open .nav-toggle .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-open .nav-toggle .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ===================================================
+   전체 화면 메뉴 (기본 숨김)
+=================================================== */
+.full-screen-menu {
+    display: none;
+}
+
+/* 메뉴 열림 시: 화면 전체를 덮음 (중앙 정렬 + 배경 흐림 적용) */
+.nav-open .full-screen-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 리스트와 버튼 영역을 상하로 분리 */
+    align-items: center; /* 가로축(좌우) 중앙 정렬 */
 
     position: fixed;
-    /* top: 60px; -> 헤더 높이에 맞추어 수정 */
-    top: 60px; 
+    top: 60px; /* 헤더 높이에 맞추어 시작 위치 설정 */
     left: 0;
     width: 100%; 
-    height: 40%;
+    height: 40%; /* 화면의 40% 높이 차지 */
     
-    /* 🚨 수정: 배경색을 투명하게 (rgba) 조정하여 블러 효과가 보이도록 함 */
+    /* 배경: 투명한 검은색 (블러 효과가 비치도록) */
     background-color: rgba(0, 0, 0, 0.35); 
     
-    /* 🚨 추가: 뒷 배경을 흐리게 만듦 (블러 값은 원하는 대로 조정 가능) */
+    /* 뒷 배경을 흐리게 만듦 */
     backdrop-filter: blur(5px); 
-    /* Webkit 브라우저(Chrome, Safari 등) 지원을 위해 추가 */
     -webkit-backdrop-filter: blur(5px); 
 
     padding: 90px 30px 50px 30px;
@@ -52,71 +83,44 @@
     overflow-y: auto;
 
     animation: fadeIn 0.3s ease-out;
-=======
-/* 메뉴 열림 시 */
-.nav-open.full-screen-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  position: fixed;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  height: 16%;
-  background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 30px 50px 20px 25px;
-  z-index: 2001;
-
->>>>>>> main
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* 메뉴 리스트 */
+/* ===================================================
+   메뉴 리스트 (.nav-list)
+=================================================== */
 .nav-list {
-<<<<<<< HEAD
     list-style: none;
     padding: 0;
     margin: 0;
     flex-grow: 1;
-    /* 부모 컨테이너에 맞춰 중앙 정렬되도록 width: auto 대신 100% 유지 */
     width: 100%; 
     
-    /* 🚨 추가: 리스트 내부 항목을 중앙 정렬하기 위해 */
+    /* 리스트 내부 항목 중앙 정렬 */
     display: flex;
     flex-direction: column;
     align-items: center; 
-=======
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
->>>>>>> main
 }
 
+/* 메뉴 항목 스타일 */
 .nav-list li {
-<<<<<<< HEAD
     padding: 10px 0;
     margin: 0;
-    /* 🚨 수정: 항목 너비를 내용에 맞추거나, 아니면 100% 유지하고 내부 Link를 중앙 정렬 */
     width: 100%; 
     text-align: center; /* 텍스트 중앙 정렬 */
 }
 
 .nav-list a {
-    /* ... 기존 스타일 유지 */
     display: block;
     text-decoration: none;
     color: #ffffff;
@@ -124,56 +128,32 @@
     transition: color 0.2s;
     font-size: 24px;
     font-weight: 500;
-=======
-  padding: 18px 0;
-}
-
-.nav-list a {
-  display: block;
-  text-decoration: none;
-  color: white;
-  font-size: 22px;
-  font-weight: 500;
-  transition: color 0.2s;
->>>>>>> main
 }
 
 .nav-list a:hover {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* 구분선 */
-.menu-divider {
-  width: 88%;
-  height: 1px;
-  background-color: white;
-  margin-top: 10px;  /* 위쪽 공간 추가 */
+    color: #4CAF50; /* 호버 시 녹색 계열 */
+    background-color: transparent;
 }
 
 
-<<<<<<< HEAD
-/* 로그인/회원가입 버튼 영역 스타일 */
+/* ===================================================
+   로그인/회원가입 버튼 영역 (버튼 통합 버전)
+=================================================== */
 .auth-buttons {
     display: flex;
     flex-direction: column;
     gap: 15px;
 
-    /* 버튼 영역의 최대 너비를 지정 */
+    /* 버튼 영역의 최대 너비를 지정 (중앙 정렬을 위해 필요) */
     max-width: 300px;
     width: 100%;
 
-    /* 🚨 수정: 중앙 정렬을 위해 margin-left 제거 */
-    margin-left: 0; 
-    /* ************************************** */
-
+    margin-left: 0; /* 중앙 정렬을 위해 마진 제거 */
     padding-top: 30px;
     flex-shrink: 0;
-    
-    /* 🚨 버튼 영역 자체가 중앙 정렬되었으므로 내부 버튼들은 max-width를 잘 따름 */
 }
 
 .auth-buttons button {
-    /* ... 버튼 스타일 유지 */
     width: 100%;
     padding: 15px 20px;
     border-radius: 8px;
@@ -182,98 +162,31 @@
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     line-height: 1;
-=======
-/* 로그인 / 회원가입 버튼 독립 섹션 */
-.full-screen-auth {
-  display: none;
-  flex-direction: column;
-  position: fixed;
-  top: 150px; /* 메뉴 바로 아래 위치 기준 */
-  left: 52%;
-  transform: translateX(-50%);
-  width: 90%;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 30px 50px 600px 25px;
-  z-index: 2001;
 }
 
-.nav-open.full-screen-auth {
-  display: flex;
-  margin-top: calc(30px + 40px + 25px); /* 메뉴 padding + menu-divider 높이 + 간격 */
->>>>>>> main
-}
-
-/* Sign Up 버튼 - 심플 버전 */
+/* Sign Up 버튼 (흰색 배경, 검은색 텍스트) */
 .btn-signup {
-  background-color: white;
-  color: black;
-  border: none;              /* 테두리 제거 */
-  border-radius: 6px;        /* 살짝 둥근 모서리 */
-  padding: 10px 0;           /* 위아래 패딩만 간단히 */
-  font-size: 18px;
-  font-weight: 800;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
 }
 
 .btn-signup:hover {
-  background-color: #f0f0f0; /* 은은한 hover */
-  transform: translateY(-2px); /* 살짝 떠있는 느낌 */
+    background-color: #f0f0f0;
 }
 
-/* Sign Up 버튼 */
-.btn-signup {
-  background-color: white;
-  color: black;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 0;
-  font-size: 18px;
-  font-weight: 300;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-  margin-bottom: 20px; /* 간격 늘림 */
-}
-
-.btn-signup:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-2px);
-}
-
-/* Sign In 버튼 */
+/* Sign In 버튼 (투명 배경, 흰색 텍스트, 흰색 테두리) */
 .btn-signin {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  border-radius: 6px;
-  padding: 10px 0;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-  /* Sign In 버튼은 margin 필요 없음 */
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
 .btn-signin:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-
-/* 반응형 */
-@media (max-width: 768px) {
-  .nav-list a {
-    font-size: 18px;
-  }
-
-  .btn-signup,
-  .btn-signin {
-    font-size: 16px;
-    padding: 10px 0;
-  }
-}
+/* ===================================================
+   미디어 쿼리 (반응형) - 필요에 따라 추가
+=================================================== */
+/* (이전 버전의 미디어 쿼리는 버튼 섹션 분리로 인해 제거되었습니다. 필요하다면 다시 추가하세요.) */
