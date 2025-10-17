@@ -32,9 +32,9 @@ const SignUp = () => {
   }
 
   return (
-    // ✅ React Fragment로 전체를 감싸줍니다.
+    // React Fragment로 전체를 감싸줍니다.
     <>
-      <Header /> {/* ✅ 여기에 Header 컴포넌트를 추가합니다. */}
+      <Header /> {/* Header 컴포넌트를 추가합니다. */}
       
       <div className="auth-container">
         <h2>회원가입</h2>
