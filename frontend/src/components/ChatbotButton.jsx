@@ -9,7 +9,11 @@ function ChatbotButton() {
         target="_blank" 
         rel="noopener noreferrer" 
       >
+<<<<<<< HEAD
         챗봇 시작하기
+=======
+        A.I 상담시작
+>>>>>>> main
       </a>
     </div>
   )
