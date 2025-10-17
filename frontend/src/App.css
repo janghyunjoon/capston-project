@@ -2,18 +2,5 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-
-  /* 흰색 계열 그라데이션 */
-  background: linear-gradient(270deg, #ffffff, #f5f5f5, #ffffff);
-  background-size: 600% 600%; /* 그라데이션이 이동할 수 있게 확대 */
-  
-  /* 애니메이션 적용 */
-  animation: gradientShift 10s ease infinite;
-}
-
-/* 그라데이션 이동 애니메이션 */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  background-color: #ffffff; /* 단순 흰색 배경 */
 }
