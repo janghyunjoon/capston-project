@@ -1,45 +1,72 @@
+/* src/components/home/HomeHero.css */
+
 .subtitle-link {
     text-decoration: none; 
     color: inherit; 
 }
 
-.subtitle-link:hover,
-.subtitle-link:focus,
-.subtitle-link:active,
-.subtitle-link:visited {
-    text-decoration: none; 
-    color: inherit; 
-    opacity: 1;
-}
+/* ... (기타 링크 스타일은 그대로) ... */
 
+/* ✅ 전체 슬라이더 영역을 감싸는 박스 스타일 */
 .homeHero {
-    height: 400px;
+    width: 100%;
+    height: 200px; /* 내부 콘텐츠 높이(400px) + 상하 여백(40px) */
+    background-color: white; /* ❗ 요청하신 대로 확인을 위한 검은색 배경 */
+    padding: 10px 10px; /* 슬라이드 위아래에 20px씩 여백 추가 */
+    box-sizing: border-box;
+    border-radius: 12px;
+    
 }
 
 .homeHero .swiper {
     height: 100%;
 }
 
-.homeHero .swiper-slide a {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
+/* ✅ 슬라이드를 중앙 정렬하기 위한 스타일 */
+.homeHero .swiper-slide {
+    display: flex;
+    margin-top: 35px;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center;   /* 세로 중앙 정렬 */
 }
-.homeHero .swiper-button-prev,
-.homeHero .swiper-button-next {
-    top: 50%; 
-    color: #fff;
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.7));
+
+/* ... (버튼, 텍스트 등 다른 스타일은 거의 동일) ... */
+
+    .homeHero .swiper-button-prev,
+    .homeHero .swiper-button-next {
+    top: 80%; /* ✅ 다시 50%로 변경. top: 70%는 너무 아래로 내려갑니다. */
+    transform: translateY(-50%); /* 버튼을 수직 중앙에 정확히 배치 */
+    color: black; /* ❗ 버튼 아이콘 색상은 흰색으로 유지 */
+    
+    /* ❗ 기존 filter: drop-shadow 삭제 (아래 동그라미 배경으로 대체) */
+    /* filter: drop-shadow(0 0 5px rgba(0,0,0,0.7)); */ 
     z-index: 10;
+    width: 20px;          /* 버튼의 너비 (원 크기) */
+    height: 20px;         /* 버튼의 높이 (원 크기) */
+    align-items: center;  /* 아이콘 세로 중앙 정렬 */
+    justify-content: center; /* 아이콘 가로 중앙 정렬 */
+    cursor: pointer;      /* 마우스 오버 시 클릭 가능 표시 */
+    transition: background-color 0.3s ease; /* 호버 효과를 위한 전환 */
+}
+.homeHero .swiper-button-prev:hover,
+.homeHero .swiper-button-next:hover {
+    color: rgba(0, 0, 0, 0.3); /* 호버 시 배경색 더 진하게 */
+}
+
+/* Swiper 기본 버튼 아이콘 색상이 자동으로 적용됩니다.
+   만약 버튼 아이콘 색상을 직접 조정하려면 아래 코드를 추가하세요. */
+.homeHero .swiper-button-prev::after,
+.homeHero .swiper-button-next::after {
+    font-size: 20px; /* 아이콘 크기 조절 */
+    color: white;    /* 아이콘 색상 (검은색 배경에 흰색 아이콘) */
 }
 
 .homeHero .swiper-button-prev {
-    left: calc(50% - 500px); 
+    left: calc(50% - 540px); /* ❗ 버튼 크기 고려하여 위치 조정 */
 }
 
 .homeHero .swiper-button-next {
-    right: calc(50% - 500px);
+    right: calc(50% - 540px); /* ❗ 버튼 크기 고려하여 위치 조정 */
 }
 
 .homeHero .t-wrap {
@@ -72,17 +99,23 @@
 }
 
 .swiper-pagination-bullet {
-    background-color: #fff;
+    background-color: black;
     border-radius: 0;
     width: 20px;
     height: 5px;
 }
 
+/* ✅ 슬라이드 카드 스타일 수정 */
 .slide-card {
-    width: 1000px;
-    height: 400px; /* 원하는 높이 */
+    width: 800px;
+    height: 150px; /* ❗ 부모 높이와 일치시키기 위해 400px로 통일 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transform: translate(17%, 10%);
+    /* ❗ 문제를 일으키는 transform 속성 반드시 삭제! */
+    /* transform: translate(17%, 10%); */
+    
+    /* 🎨 카드 디자인을 더 예쁘게 (선택 사항) */
+    border-radius: 8px;
+    overflow: hidden; /* 이미지가 모서리를 삐져나가지 않도록 */
 }
