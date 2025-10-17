@@ -1,60 +1,18 @@
-<<<<<<< HEAD
-.chatbot a { /* ❗❗ button 대신 a로 변경 ❗❗ */
-    position: fixed;               
-=======
 .chatbot a {
     position: fixed;
->>>>>>> main
     border-radius: 15px;
     height: 50px;
     width: 30%;
     font-size: 20px;
-<<<<<<< HEAD
-    
-    /* <a> 태그를 <button>처럼 보이게 하기 위한 추가 스타일 */
-    display: flex; /* 텍스트를 중앙 정렬하기 위해 추가 */
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-    text-decoration: none; /* ❗❗ 기본 밑줄 제거 ❗❗ */
-    
-    background-color: rgb(44, 32, 26);
-    border: 3px solid orange;
-=======
     background-color: rgb(50, 90, 180);
     border: 2px solid black;
->>>>>>> main
     color: white;
     left: 50%;
     transform: translateX(-50%);
     bottom: 15%;
-    z-index: 9999; /* ✅ 모든 요소 위로 올리기 */
-<<<<<<< HEAD
+    z-index: 9999; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    text-decoration: none; 
 }
-=======
-    display: flex; /* 텍스트를 중앙 정렬하기 위해 추가 */
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-    text-decoration: none; /* ❗❗ 기본 밑줄 제거 ❗❗ */
-    
-}
-
-/* ✅ 반응형 처리: 768px 이하 (태블릿 & 모바일) */
-@media (max-width: 768px) {
-    .chatbot a {
-        width: 60%;        /* 화면의 60%로 확장 */
-        height: 45px;      /* 살짝 낮게 */
-        font-size: 16px;   /* 텍스트도 줄이기 */
-        bottom: 12%;       /* 살짝 위로 올리기 */
-    }
-}
-
-/* ✅ 아주 작은 화면 (480px 이하 스마트폰) */
-@media (max-width: 480px) {
-    .chatbot a {
-        width: 80%;        /* 화면 대부분 차지 */
-        height: 40px;      /* 더 얇게 */
-        font-size: 14px;   /* 글자 작게 */
-        bottom: 10%;       /* 살짝 더 위로 */
-    }
-}
->>>>>>> main
