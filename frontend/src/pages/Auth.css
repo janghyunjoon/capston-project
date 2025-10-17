@@ -10,28 +10,29 @@
 .auth-form {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 350px;
   gap: 10px;
 }
 
 .auth-form input {
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
 
 .auth-form button {
-  padding: 10px;
+  padding: 15px;
   border: none;
-  background-color: orange;
+  background-color: black;
   color: white;
+  font-size: medium;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
 }
 
 .auth-form button:hover {
-  background-color: darkorange;
+  background-color: #333;
 }
 
 .auth-message {
@@ -45,22 +46,8 @@
 }
 
 .auth-switch span {
-  color: blue;
+  margin-left: 10px;
+  font-weight: bold;
+  color: rgba(100, 149, 237);
   cursor: pointer;
-  text-decoration: underline;
-}
-.back-button {
-  margin-top: 20px;
-  background: none;
-  border: 1px solid #999;
-  color: #555;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.back-button:hover {
-  background-color: #eee;
-  color: #000;
 }

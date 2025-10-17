@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './Auth.css'
+import Header from '../components/Header' // Header 컴포넌트 import
 
 const BASE_URL = '/api/user'
 
@@ -31,43 +32,40 @@ const SignUp = () => {
   }
 
   return (
-    <div className="auth-container">
-      <h2>회원가입</h2>
-      <form onSubmit={handleSubmit} className="auth-form">
-        <input
-          type="text"
-          name="username"
-          placeholder="아이디"
-          value={formData.username}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="비밀번호 (6자 이상)"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Sign Up</button>
-      </form>
+    // ✅ React Fragment로 전체를 감싸줍니다.
+    <>
+      <Header /> {/* ✅ 여기에 Header 컴포넌트를 추가합니다. */}
+      
+      <div className="auth-container">
+        <h2>회원가입</h2>
+        <form onSubmit={handleSubmit} className="auth-form">
+          <input
+            type="text"
+            name="username"
+            placeholder="아이디"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="비밀번호 (6자 이상)"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit">회원가입</button>
+        </form>
 
-      {message && <p className="auth-message">{message}</p>}
+        {message && <p className="auth-message">{message}</p>}
 
-      <p className="auth-switch">
-        이미 계정이 있나요?{' '}
-        <span onClick={() => navigate('/signin')}>로그인하기</span>
-      </p>
-
-      {/* ✅ 뒤로가기 버튼 */}
-      <button
-        className="back-button"
-        onClick={() => navigate('/')}
-      >
-        ← 메인으로 돌아가기
-      </button>
-    </div>
+        <p className="auth-switch">
+          이미 계정이 있나요?{' '}
+          <span onClick={() => navigate('/signin')}>로그인</span>
+        </p>
+      </div>
+    </>
   )
 }
 
