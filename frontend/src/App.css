@@ -1,3 +1,12 @@
+/* src/App.css */
+
+/* .main의 padding-top 값을 조정합니다. */
+/* TopBanner 높이 (70px) + Header 높이 (70px) + 여유 공간 (20px) = 160px */
+.main {
+  padding-top: 160px; /* ✅ 이 값을 변경합니다. */
+}
+
+/* ... 기타 전역 스타일 ... */
 body {
   margin: 0;
   padding: 0;

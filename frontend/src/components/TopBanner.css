@@ -1,0 +1,56 @@
+/* src/components/TopBanner.css */
+
+.top-banner {
+    position: fixed; /* 화면 최상단에 고정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a; /* 어두운 배경색 */
+    color: white;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    z-index: 3000; /* 헤더(z-index: 2000)보다 높게 설정 */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 내용물을 중앙으로 정렬 */
+    height: 70px; /* 배너의 높이 */
+}
+
+.top-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 이미지와 텍스트 사이 간격 */
+    max-width: 1200px; /* 내용물 최대 너비 제한 (선택 사항) */
+    width: 100%; /* 너비 100% 사용 */
+    justify-content: center; /* 컨텐츠도 중앙으로 */
+    margin-right: 40px; /* 닫기 버튼 공간 확보 */
+}
+
+.top-banner-image img {
+    height: 50px; /* 이미지 높이 조절 */
+    /* 필요하다면 width도 조절 */
+}
+
+.top-banner-text p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.top-banner-text strong {
+    font-size: 18px; /* 강조 텍스트 크기 */
+    font-weight: bold;
+}
+
+.top-banner-close-btn {
+    position: absolute; /* 배너 우측 상단에 고정 */
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1; /* X 아이콘 정렬 */
+}
