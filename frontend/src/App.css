@@ -3,4 +3,5 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: #ffffff; /* 단순 흰색 배경 */
+  height: 3000px;
 }

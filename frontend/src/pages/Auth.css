@@ -23,15 +23,11 @@
 .auth-form button {
   padding: 10px;
   border: none;
-  background-color: orange;
+  background-color: black;
   color: white;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-}
-
-.auth-form button:hover {
-  background-color: darkorange;
 }
 
 .auth-message {

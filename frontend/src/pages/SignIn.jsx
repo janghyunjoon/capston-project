@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './Auth.css'
+import Header from '../components/Header'
 
 const BASE_URL = '/api/user'
 
@@ -32,6 +33,8 @@ const SignIn = () => {
   }
 
   return (
+    <>
+    <Header />
     <div className="auth-container">
       <h2>로그인</h2>
       <form onSubmit={handleSubmit} className="auth-form">
@@ -51,7 +54,7 @@ const SignIn = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit">Sign In</button>
+        <button type="submit">로그인</button>
       </form>
 
       {message && <p className="auth-message">{message}</p>}
@@ -69,6 +72,7 @@ const SignIn = () => {
         ← 메인으로 돌아가기
       </button>
     </div>
+    </>
   )
 }
 
