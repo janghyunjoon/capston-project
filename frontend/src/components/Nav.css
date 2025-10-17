@@ -1,19 +1,13 @@
 /* Nav.css */
 
-/* ===================================================
-   기본 Nav 컨테이너
-=================================================== */
-nav { /* React 컴포넌트의 <nav> 태그에 직접 적용 */
+/* 기본 Nav 컨테이너 */
+nav {
     position: relative;
     z-index: 2001;
-    /* padding: 10px 20px; -> 헤더 자체에 패딩이 있다면 추가 */
 }
 
-/* ===================================================
-   햄버거 메뉴 토글 버튼 스타일
-=================================================== */
+/* 햄버거 버튼 스타일 */
 .nav-toggle {
-    /* 햄버거 바가 아닌, 버튼 자체의 스타일 */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -25,7 +19,7 @@ nav { /* React 컴포넌트의 <nav> 태그에 직접 적용 */
     padding: 0;
     margin: 0;
     position: relative;
-    z-index: 2002; /* 메뉴보다 위에 위치 */
+    z-index: 2002;
 }
 
 /* 햄버거 바(Bar) 스타일 - 흰색 */
@@ -50,37 +44,29 @@ nav { /* React 컴포넌트의 <nav> 태그에 직접 적용 */
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* ===================================================
-   전체 화면 메뉴 (기본 숨김)
-=================================================== */
+/* 전체 화면 메뉴 컨테이너 */
 .full-screen-menu {
     display: none;
 }
 
-/* 메뉴 열림 시: 화면 전체를 덮음 (중앙 정렬 + 배경 흐림 적용) */
 .nav-open .full-screen-menu {
+    /* 메뉴 열림 시: 화면 전체를 덮음 */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* 리스트와 버튼 영역을 상하로 분리 */
-    align-items: center; /* 가로축(좌우) 중앙 정렬 */
+    justify-content: space-between;
 
     position: fixed;
-    top: 180px; /* 헤더 높이에 맞추어 시작 위치 설정 */
+    top: 60px;
     left: 0;
-    width: 100%; 
-    height: 40%; /* 화면의 40% 높이 차지 */
-    
-    /* 배경: 투명한 검은색 (블러 효과가 비치도록) */
-    background-color: rgba(0, 0, 0, 0.35); 
-    
-    /* 뒷 배경을 흐리게 만듦 */
-    backdrop-filter: blur(5px); 
-    -webkit-backdrop-filter: blur(5px); 
+    width: 90%;
+    height: 40%;
 
+    background-color: #000000;
     padding: 90px 30px 50px 30px;
     margin: 0;
     z-index: 2001;
     overflow-y: auto;
+    /* 메뉴 항목이 많아지면 스크롤 가능 */
 
     animation: fadeIn 0.3s ease-out;
 }
@@ -90,34 +76,27 @@ nav { /* React 컴포넌트의 <nav> 태그에 직접 적용 */
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* ===================================================
-   메뉴 리스트 (.nav-list)
-=================================================== */
+/* 메뉴 리스트 (.nav-list) */
 .nav-list {
     list-style: none;
     padding: 0;
     margin: 0;
     flex-grow: 1;
-    width: 100%; 
-    
-    /* 리스트 내부 항목 중앙 정렬 */
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
+    width: 100%;
 }
 
 /* 메뉴 항목 스타일 */
 .nav-list li {
     padding: 10px 0;
     margin: 0;
-    width: 100%; 
-    text-align: center; /* 텍스트 중앙 정렬 */
+    width: 100%;
 }
 
 .nav-list a {
@@ -131,24 +110,24 @@ nav { /* React 컴포넌트의 <nav> 태그에 직접 적용 */
 }
 
 .nav-list a:hover {
-    color: #4CAF50; /* 호버 시 녹색 계열 */
+    color: #4CAF50;
     background-color: transparent;
 }
 
 
-/* ===================================================
-   로그인/회원가입 버튼 영역 (버튼 통합 버전)
-=================================================== */
+/* 로그인/회원가입 버튼 영역 스타일 */
 .auth-buttons {
     display: flex;
     flex-direction: column;
     gap: 15px;
 
-    /* 버튼 영역의 최대 너비를 지정 (중앙 정렬을 위해 필요) */
+    /* 버튼 영역의 최대 너비를 지정 */
     max-width: 300px;
     width: 100%;
 
-    margin-left: 0; /* 중앙 정렬을 위해 마진 제거 */
+    margin-left: 10px;
+    /* ************************************** */
+
     padding-top: 30px;
     flex-shrink: 0;
 }
@@ -185,8 +164,3 @@ nav { /* React 컴포넌트의 <nav> 태그에 직접 적용 */
 .btn-signin:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
-
-/* ===================================================
-   미디어 쿼리 (반응형) - 필요에 따라 추가
-=================================================== */
-/* (이전 버전의 미디어 쿼리는 버튼 섹션 분리로 인해 제거되었습니다. 필요하다면 다시 추가하세요.) */

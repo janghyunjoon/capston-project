@@ -18,7 +18,7 @@ function App() {
     <>
       <div className="main">
         {/* 홈 슬라이드, Header보다 먼저 렌더링 */}
-        {!isAuthPage && <Home />}
+        
 
         {/* 로그인/회원가입 페이지가 아닐 때만 Header와 버튼 */}
         {!isAuthPage && <Header />}
@@ -27,6 +27,7 @@ function App() {
         {/* 공통 컴포넌트 */}
         {!isAuthPage && <Description />}
         {!isAuthPage && <TrafficEventTable />}
+        {!isAuthPage && <Home />}
 
         {/* 로그인/회원가입 페이지 */}
         <Routes>
