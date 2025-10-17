@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import './Auth.css' // 원래 스타일 파일은 유지
+import './Auth.css'
 
-// API 호출 기본 경로 (5000 포트 제거)
 const BASE_URL = '/api/user'
 
-// ===================================
-// 로그인 컴포넌트 (SignIn)
-// ===================================
 const SignIn = () => {
   const [formData, setFormData] = useState({ username: '', password: '' })
   const [message, setMessage] = useState('')
@@ -24,19 +20,14 @@ const SignIn = () => {
     setMessage('')
 
     try {
-      const res = await axios.post(
-        `${BASE_URL}/login`, // 포트 제거
-        formData,
-        { withCredentials: true }
-      )
-
+      const res = await axios.post(`${BASE_URL}/login`, formData, {
+        withCredentials: true,
+      })
       setMessage('로그인 성공!')
-      localStorage.setItem('token', res.data.token) // 선택사항
+      localStorage.setItem('token', res.data.token)
       setTimeout(() => navigate('/'), 1000)
     } catch (err) {
-      setMessage(
-        err.response?.data?.message || '로그인 중 오류가 발생했습니다.'
-      )
+      setMessage(err.response?.data?.message || '로그인 중 오류가 발생했습니다.')
     }
   }
 
@@ -62,11 +53,21 @@ const SignIn = () => {
         />
         <button type="submit">Sign In</button>
       </form>
+
       {message && <p className="auth-message">{message}</p>}
+
       <p className="auth-switch">
         계정이 없나요?{' '}
         <span onClick={() => navigate('/signup')}>회원가입하기</span>
       </p>
+
+      {/* ✅ 뒤로가기 버튼 */}
+      <button
+        className="back-button"
+        onClick={() => navigate('/')}
+      >
+        ← 메인으로 돌아가기
+      </button>
     </div>
   )
 }
