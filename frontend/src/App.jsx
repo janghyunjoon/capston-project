@@ -12,35 +12,31 @@ import './App.css';
 function App() {
   const location = useLocation();
 
-  // 로그인/회원가입 페이지 여부 확인
   const isAuthPage = location.pathname === "/signin" || location.pathname === "/signup";
 
   return (
     <>
-      {/* 로그인/회원가입 페이지가 아닐 때만 Header와 ChatbotButton을 렌더링 */}
-      {!isAuthPage && <Header />}
-      {!isAuthPage && <ChatbotButton />}
-
       <div className="main">
-        {/* 로그인/회원가입 페이지 아닐 때만 공통 컴포넌트 표시 */}
+        {/* 홈 슬라이드, Header보다 먼저 렌더링 */}
+        {!isAuthPage && <Home />}
+
+        {/* 로그인/회원가입 페이지가 아닐 때만 Header와 버튼 */}
+        {!isAuthPage && <Header />}
+        {!isAuthPage && <ChatbotButton />}
+
+        {/* 공통 컴포넌트 */}
         {!isAuthPage && <Description />}
+        {!isAuthPage && <TrafficEventTable />}
 
+        {/* 로그인/회원가입 페이지 */}
         <Routes>
-          {/* 메인 페이지 */}
-          <Route path="/" element={<Home />} />
-
-          {/* 로그인 페이지 */}
           <Route path="/signin" element={<SignIn />} />
-
-          {/* 회원가입 페이지 */}
           <Route path="/signup" element={<SignUp />} />
         </Routes>
-
-        {/* 메인 전용 테이블 */}
-        {!isAuthPage && <TrafficEventTable />}
       </div>
     </>
   );
 }
 
+// ✅ 반드시 default export
 export default App;

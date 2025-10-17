@@ -65,7 +65,7 @@ nav { /* React 컴포넌트의 <nav> 태그에 직접 적용 */
     align-items: center; /* 가로축(좌우) 중앙 정렬 */
 
     position: fixed;
-    top: 60px; /* 헤더 높이에 맞추어 시작 위치 설정 */
+    top: 180px; /* 헤더 높이에 맞추어 시작 위치 설정 */
     left: 0;
     width: 100%; 
     height: 40%; /* 화면의 40% 높이 차지 */
