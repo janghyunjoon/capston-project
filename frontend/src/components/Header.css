@@ -37,8 +37,8 @@ header.scrolled {
 }
 
 .logo-img {
-    height: 45px;
-    width: 45px;
+    height: 80px;
+    width: 70px;
 }
 
 .logo-text {
@@ -58,13 +58,26 @@ header.scrolled {
     color: black;
     text-decoration: none;
     font-size: 16px;
-    font-weight: 370; /* 비표준 값(370)을 표준 값(500)으로 수정 */
+    font-weight: 500;
     padding: 5px;
-    transition: color 0.2s ease-in-out;
+    display: inline-block; /* transform을 위해 유지 */
+
+    /* [수정됨] 
+      기본 상태에서는 'color'에 대한 트랜지션만 남겨둡니다.
+      (transform 트랜지션을 제거)
+    */
+    transition: color 0.2s ease-in-out; 
 }
 
 .nav-link:hover {
-    color: #AAAAAA; /* 연한 회색으로 변경 */
+    color: #AAAAAA; 
+    transform: rotateX(360deg);
+    
+    /* [수정됨] 
+      'transform'에 대한 트랜지션을 :hover 상태일 때만 적용합니다.
+      이렇게 하면 마우스를 '올릴 때만' 0.6초간 회전 애니메이션이 실행됩니다.
+    */
+    transition: transform 0.6s ease, color 0.2s ease-in-out;
 }
 
 /* 오른쪽 버튼 그룹 */
