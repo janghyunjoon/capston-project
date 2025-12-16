@@ -1,0 +1,135 @@
+// src/style/pages/Qxquiz.scss
+
+.qx-wrapper {
+  max-width: 720px;
+  margin: 60px auto;
+  padding: 0 16px;
+}
+
+.qx-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.qx-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.qx-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.qx-card {
+  background: #0f172a;
+  color: #e5e7eb;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.qx-question {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.qx-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.qx-btn {
+  width: 90px;
+  height: 54px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.qx-result {
+  margin-top: 18px;
+  padding: 14px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  &.correct {
+    background: rgba(34, 197, 94, 0.12);
+  }
+
+  &.wrong {
+    background: rgba(239, 68, 68, 0.12);
+  }
+}
+
+.qx-result-title {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.qx-explain {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.qx-explain-title {
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.qx-explain-body {
+  font-size: 14px;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+.qx-footer {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.qx-next,
+.qx-restart {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.qx-finish {
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 16px;
+  background: #111827;
+  color: #e5e7eb;
+  text-align: center;
+}
+
+.qx-finish-title {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.qx-finish-score {
+  margin: 10px 0 14px;
+  opacity: 0.95;
+}
