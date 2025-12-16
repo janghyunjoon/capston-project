@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+<<<<<<< HEAD
 import './Auth.css'
 import Header from '../components/Header' // Header 컴포넌트 import
+=======
+import '../style/pages/Auth.scss'
+import Header from '../components/Header'
+>>>>>>> hyunjoon2
 
 const BASE_URL = '/api/user'
 

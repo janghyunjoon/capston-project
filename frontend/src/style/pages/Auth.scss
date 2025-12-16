@@ -8,6 +8,7 @@
 }
 
 .auth-form {
+<<<<<<< HEAD:frontend/src/pages/Auth.css
     display: flex;
     flex-direction: column;
     width: 350px;
@@ -35,6 +36,28 @@
 /* HEAD 섹션의 hover 효과를 적용 */
 .auth-form button:hover {
     background-color: #333;
+=======
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 10px;
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  button {
+    padding: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+>>>>>>> hyunjoon2:frontend/src/style/pages/Auth.scss
 }
 
 .auth-message {
@@ -43,6 +66,7 @@
 }
 
 .auth-switch {
+<<<<<<< HEAD:frontend/src/pages/Auth.css
     margin-top: 15px;
     font-size: 14px;
 }
@@ -53,3 +77,30 @@
     color: rgba(100, 149, 237);
     cursor: pointer;
 }
+=======
+  margin-top: 15px;
+  font-size: 14px;
+
+  span {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.back-button {
+  margin-top: 20px;
+  background: none;
+  border: 1px solid #999;
+  color: #555;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #eee;
+    color: #000;
+  }
+}
+>>>>>>> hyunjoon2:frontend/src/style/pages/Auth.scss
