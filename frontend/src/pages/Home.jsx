@@ -1,14 +1,13 @@
-import React from 'react'
-import HomeHero from './home/HomeHero'
+import React from "react";
 
+import Description from "../components/Description";
 
 const Home = () => {
-    return (
-        <section>
-            <HomeHero />
-            
-        </section>
-    )
-}
+  return (
+    <section>
+      <Description />
+    </section>
+  );
+};
 
-export default Home
+export default Home;

@@ -1,5 +1,5 @@
 import React from 'react'
-import "./ChatbotButton.css";
+import "../style/components/ChatbotButton.scss";
 
 function ChatbotButton() {
   return (

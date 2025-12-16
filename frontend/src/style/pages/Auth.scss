@@ -12,22 +12,22 @@
   flex-direction: column;
   width: 300px;
   gap: 10px;
-}
 
-.auth-form input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
 
-.auth-form button {
-  padding: 10px;
-  border: none;
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
+  button {
+    padding: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 }
 
 .auth-message {
@@ -38,13 +38,14 @@
 .auth-switch {
   margin-top: 15px;
   font-size: 14px;
+
+  span {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 
-.auth-switch span {
-  color: blue;
-  cursor: pointer;
-  text-decoration: underline;
-}
 .back-button {
   margin-top: 20px;
   background: none;
@@ -54,9 +55,9 @@
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
-}
 
-.back-button:hover {
-  background-color: #eee;
-  color: #000;
+  &:hover {
+    background-color: #eee;
+    color: #000;
+  }
 }

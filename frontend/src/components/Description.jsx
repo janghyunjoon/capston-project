@@ -1,5 +1,7 @@
 import React from 'react'
-import "./Description.css"
+import "../style/components/Description.scss"
+import ChatbotButton from "../components/ChatbotButton";
+import Oxquiz from "../pages/Oxquiz";
 const Hero = () => {
   return (
     <div className='inner description-inner'>
@@ -7,6 +9,8 @@ const Hero = () => {
         <span>
           자동차사고 과실비율 측정 AI
         </span>
+        <ChatbotButton />
+        <Oxquiz />
       </h1>
       <p className="txt">
         교통사고 발생 시 상황을 분석하여<br/>
