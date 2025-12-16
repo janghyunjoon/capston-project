@@ -5,11 +5,6 @@ import Oxquiz from "../pages/Oxquiz";
 const Hero = () => {
   return (
     <div className='inner description-inner'>
-<<<<<<< HEAD
-      <p className="tit">
-        자동차사고 과실비율
-      </p>
-=======
       <h1 className="tit">
         <span>
           자동차사고 과실비율 측정 AI
@@ -17,7 +12,6 @@ const Hero = () => {
         <ChatbotButton />
         <Oxquiz />
       </h1>
->>>>>>> hyunjoon2
       <p className="txt">
         AI에게 질문해 보세요
         </p>

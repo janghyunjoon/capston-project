@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
-import "./Header.css";
-import LogoSvg from './../assets/logo3.png';
-=======
 import "../style/components/Header.scss";
 import LogoSvg from './../assets/logo.png';
->>>>>>> hyunjoon2
 
 function Header() {
   const navigate = useNavigate();

@@ -1,27 +1,25 @@
 .auth-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
 }
 
 .auth-form {
-<<<<<<< HEAD:frontend/src/pages/Auth.css
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    gap: 10px;
-}
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 10px;
 
-.auth-form input {
+  input {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
-}
+  }
 
-.auth-form button {
+  button {
     padding: 15px;
     border: none;
     background-color: black;
@@ -30,61 +28,28 @@
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s ease; /* 호버 효과를 부드럽게 */
-}
+    transition: background-color 0.2s ease;
 
-/* HEAD 섹션의 hover 효과를 적용 */
-.auth-form button:hover {
-    background-color: #333;
-=======
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  gap: 10px;
-
-  input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    &:hover {
+      background-color: #333;
+    }
   }
-
-  button {
-    padding: 10px;
-    border: none;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-  }
->>>>>>> hyunjoon2:frontend/src/style/pages/Auth.scss
 }
 
 .auth-message {
-    margin-top: 10px;
-    color: red;
+  margin-top: 10px;
+  color: red;
 }
 
 .auth-switch {
-<<<<<<< HEAD:frontend/src/pages/Auth.css
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-.auth-switch span {
-    margin-left: 10px;
-    font-weight: bold;
-    color: rgba(100, 149, 237);
-    cursor: pointer;
-}
-=======
   margin-top: 15px;
   font-size: 14px;
 
   span {
-    color: blue;
+    margin-left: 10px;
+    font-weight: bold;
+    color: rgba(100, 149, 237);
     cursor: pointer;
-    text-decoration: underline;
   }
 }
 
@@ -103,4 +68,3 @@
     color: #000;
   }
 }
->>>>>>> hyunjoon2:frontend/src/style/pages/Auth.scss
