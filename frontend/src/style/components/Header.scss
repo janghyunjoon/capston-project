@@ -1,5 +1,5 @@
 header {
-  background-color: white;
+  background-color: #000000;
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: space-between;
@@ -28,19 +28,14 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
   text-decoration: none;
 
   .logo-img {
-    height: 45px;
-    width: 45px;
+    height: 90px;
+    width: 180px;
   }
 
-  .logo-text {
-    color: black;
-    font-size: 28px;
-    font-weight: 900;
-  }
 }
 
 .nav-links {
