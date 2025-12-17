@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Header.css";
-import LogoSvg from './../assets/logo3.png';
+import "../style/components/Header.scss";
+import LogoSvg from './../assets/alogo.png';
 
 function Header() {
   const navigate = useNavigate();
@@ -26,15 +26,11 @@ function Header() {
     <header className={isScrolled ? "scrolled" : ""}>
       <div className="header-left">
         <a href="/" className="logo">
-          <span className="logo-text">제목넣는칸</span>
           <img src={LogoSvg} alt="로고" className="logo-img" />
         </a>
 
         {/* 네비게이션 */}
-        <nav className="nav-links">
-          <a onClick={() => handleNavLinkClick("/community")} className="nav-link">커뮤니티</a>
-          <a onClick={() => handleNavLinkClick("/support")} className="nav-link">고객지원</a>
-        </nav>
+       
       </div>
 
       {/* 오른쪽 버튼 영역 */}

@@ -1,0 +1,49 @@
+.tit {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 2000;
+  margin-top: 100px;
+}
+
+.txt {
+  color: white;
+  font-size: 20px;
+  line-height: 2.3;
+  opacity: 0.3;
+  font-weight: 1000;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.engtxt {
+  color: white;
+  line-height: 2.3;
+  opacity: 0.3;
+  text-align: center;
+}
+
+.hero-button-group {
+  display: flex;            // 가로로 배치
+  justify-content: center;   // 가운데 정렬
+  align-items: center;      // 세로 높이 맞춤
+  gap: 15px;                // 버튼 사이의 간격
+  margin: 20px 0 30px 0;    // 위아래 적절한 여백
+  width: 100%;
+
+  // 버튼 각각의 컨테이너 스타일이 영향을 주지 않도록 조정
+  .chatbot, .qx-start-container {
+    margin: 0; 
+    display: flex;
+    justify-content: center;
+    flex: 0 1 auto; // 내용물만큼만 너비 차지
+  }
+
+  // 버튼 공통 스타일 강제 적용 (크기 맞춤)
+  a, .qx-start-btn {
+    min-width: 180px; // 버튼 최소 너비를 맞춰주면 더 깔끔합니다
+    height: 45px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}

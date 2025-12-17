@@ -1,5 +1,5 @@
 import React from 'react'
-import "./ChatbotButton.css";
+import "../style/components/ChatbotButton.scss";
 
 function ChatbotButton() {
   return (
@@ -10,7 +10,7 @@ function ChatbotButton() {
         rel="noopener noreferrer" 
       >
 
-        A.I 상담시작
+        JUDGE AI 써 보기 ↗
       </a>
     </div>
   )
