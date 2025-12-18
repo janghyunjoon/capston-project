@@ -94,3 +94,105 @@ header {
     }
   }
 }
+.header-user{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.header-username{
+  font-weight: 700;
+}
+
+.logout-btn{
+  border: 1px solid #000;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+
+}
+.header-user-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0.1px solid black;
+  background: white;
+  color: black;
+  border-radius: 30px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.user-menu-caret {
+  transition: transform 0.15s ease;
+  font-size: 12px;
+}
+.user-menu-caret.open {
+  transform: rotate(180deg);
+}
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 220px;
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  padding: 12px;
+  z-index: 9999;
+}
+
+.user-dropdown-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-avatar.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #fff;
+  font-weight: 700;
+}
+
+.user-name {
+  font-weight: 700;
+}
+
+.user-dropdown-divider {
+  height: 1px;
+  background: #efefef;
+  margin: 12px 0;
+}
+
+.user-logout-btn {
+  width: 100%;
+  border: none;
+  background: black;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.user-logout-btn:hover {
+  background: #333;
+}
