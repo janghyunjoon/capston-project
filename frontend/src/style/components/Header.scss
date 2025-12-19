@@ -81,7 +81,7 @@ header {
   .signup-btn {
     background-color: black;
     color: white;
-    border: 1px solid black;
+    border: 2px solid white;
     border-radius: 10px;
     padding: 8px 12px;
     font-size: 16px;
@@ -97,12 +97,12 @@ header {
 .header-user{
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 45px;
   color: white;
 }
 
 .header-username{
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .logout-btn{
@@ -122,11 +122,11 @@ header {
 .user-menu-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  border: 0.1px solid black;
+  gap: 5px;
+  border: 1px solid gray;
   background: white;
   color: black;
-  border-radius: 30px;
+  border-radius: 20px;
   padding: 10px 14px;
   cursor: pointer;
 }
